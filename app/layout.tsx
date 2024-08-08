@@ -18,7 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          {/* navbar will come here */}
+
+          {children}
+          {/* footer will come here */}
+        </AuthProvider>
       </body>
     </html>
   )
