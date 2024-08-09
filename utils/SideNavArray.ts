@@ -5,27 +5,27 @@ const sideNavItems: SIDENAV[] = [
   {
     name: 'Home',
     icon: FiHome,
-    index: 1,
+    index: 0,
   },
   {
     name: 'Previous',
     icon: FiCalendar,
-    index: 2,
+    index: 1,
   },
   {
     name: 'Upcoming',
     icon: FiClock,
-    index: 3,
+    index: 2,
   },
   {
     name: 'Recordings',
     icon: FiVideo,
-    index: 4,
+    index: 3,
   },
   {
     name: 'Personal Room',
     icon: FiUser,
-    index: 5,
+    index: 4,
   },
 ]
 
