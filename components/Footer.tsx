@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col justify-center items-center  text-white bg-slate-200  w-full   fixed bottom-0">
+    <footer className="flex flex-col justify-center items-center  text-white bg-teal-700  w-full   fixed bottom-0">
       <div className="flex items-center ">
         <Image src={'/Logo.png'} width={40} height={40} alt="TalkHub Logo" />
         <h1 className="text-slate-900 font-semibold hover:font-bold text-lg">
