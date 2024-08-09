@@ -1,8 +1,11 @@
 // AuthProvider.js
 'use client'
 
-import { Auth0Provider } from '@auth0/auth0-react'
+import { Auth0Provider, useAuth0 } from '@auth0/auth0-react'
 import { useEffect, useState } from 'react'
+import LandingPage from './LandingPage'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 export default function AuthProvider({
   children,
@@ -10,7 +13,7 @@ export default function AuthProvider({
   children: React.ReactNode
 }) {
   const [redirectUri, setRedirectUri] = useState('')
-
+  const { isAuthenticated } = useAuth0()
   useEffect(() => {
     // Set redirect URI to the user component
     setRedirectUri(`${window.location.origin}/Users`)
@@ -28,7 +31,14 @@ export default function AuthProvider({
         redirect_uri: redirectUri,
       }}
     >
-      {children}
+      {' '}
+      <div className=" flex flex-col">
+        {/* navbar will come here */}
+        <Navbar />
+        <div>{!isAuthenticated ? <LandingPage /> : children} </div>{' '}
+        {/* footer will come here */}
+        <Footer />
+      </div>
     </Auth0Provider>
   )
 }
