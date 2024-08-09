@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+
+import { ClerkProvider } from '@clerk/nextjs'
 import AuthProvider from '@/components/AuthProvider'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -15,10 +19,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <AuthProvider>{children}</AuthProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <Navbar />
+          <AuthProvider>{children}</AuthProvider>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
