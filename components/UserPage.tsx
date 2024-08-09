@@ -4,11 +4,9 @@ import React from 'react'
 const UserProfile = () => {
   const { user } = useUser()
   return (
-    <div className=" flex items-center gap-2">
+    <div className=" flex items-center sm:flex-row flex-col  gap-2 mt-1">
+      <UserButton />
       <h1>{user?.fullName}</h1>
-      <button className=" text-sm  border-white px-2 rounded-lg text-white hover:shadow-sm hover:shadow-slate-900">
-        <UserButton />
-      </button>
     </div>
   )
 }
