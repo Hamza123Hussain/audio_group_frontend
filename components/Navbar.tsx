@@ -8,13 +8,13 @@ import Link from 'next/link'
 const Navbar = () => {
   const { user } = useUser()
   return (
-    <header className="flex justify-between items-center px-2  bg-teal-700 flex-col">
+    <header className="flex justify-between items-center  px-2  bg-teal-700 ">
       <div className="flex items-center gap-3">
         <Image src={'/Logo.png'} width={50} height={50} alt="TalkHub Logo" />
         <h1 className="text-2xl font-bold">TalkHub</h1>
       </div>
-      <nav className="flex gap-6 flex-col">
-        <a href="#features" className="hover:text-blue-400">
+      <nav className="flex gap-6 items-center  ">
+        {/* <a href="#features" className="hover:text-blue-400">
           Features
         </a>
         <a href="#how-it-works" className="hover:text-blue-400">
@@ -22,7 +22,7 @@ const Navbar = () => {
         </a>
         <a href="#contact" className="hover:text-blue-400">
           Contact
-        </a>
+        </a> */}
         {user ? (
           <UserProfile />
         ) : (
