@@ -6,6 +6,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import AuthProvider from '@/components/AuthProvider'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { IndexProvider } from '@/utils/context'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -22,9 +23,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <Navbar />
-          <AuthProvider>{children}</AuthProvider>
-          <Footer />
+          <IndexProvider>
+            <Navbar />
+            <AuthProvider>{children}</AuthProvider>
+            <Footer />
+          </IndexProvider>
         </body>
       </html>
     </ClerkProvider>
