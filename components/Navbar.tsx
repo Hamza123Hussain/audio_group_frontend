@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import Logo from '../public/Logo.png'
 import Image from 'next/image'
 import { useAuth0 } from '@auth0/auth0-react'
 import UserProfile from './UserPage'
@@ -8,12 +7,12 @@ const Navbar = () => {
   const { isAuthenticated } = useAuth0()
   const { loginWithRedirect } = useAuth0()
   return (
-    <header className="flex justify-between items-center px-2  bg-teal-700">
+    <header className="flex justify-between items-center px-2  bg-teal-700 flex-col">
       <div className="flex items-center gap-3">
         <Image src={'/Logo.png'} width={50} height={50} alt="TalkHub Logo" />
         <h1 className="text-2xl font-bold">TalkHub</h1>
       </div>
-      <nav className="flex gap-6">
+      <nav className="flex gap-6 flex-col">
         <a href="#features" className="hover:text-blue-400">
           Features
         </a>
