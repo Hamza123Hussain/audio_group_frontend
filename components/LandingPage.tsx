@@ -4,8 +4,6 @@ import React from 'react'
 const LandingPage = () => {
   return (
     <div className="bg-gray-900 text-white">
-      {/* Header */}
-
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row justify-center items-center text-center md:text-left py-20 bg-gray-800 px-4">
         <div className="md:w-1/2">
@@ -29,6 +27,7 @@ const LandingPage = () => {
             width={500}
             height={500}
             alt="Video Chat App"
+            className="w-full h-auto"
           />
         </div>
       </section>
@@ -36,13 +35,14 @@ const LandingPage = () => {
       {/* Features Section */}
       <section id="features" className="py-20 bg-gray-900 px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
           <div>
             <Image
               src={'/feature-video.png'}
               width={80}
               height={80}
               alt="Video Communication"
+              className="mx-auto"
             />
             <h3 className="text-xl font-semibold mt-4">
               Video & Voice Communication
@@ -57,6 +57,7 @@ const LandingPage = () => {
               width={80}
               height={80}
               alt="Meeting Points"
+              className="mx-auto"
             />
             <h3 className="text-xl font-semibold mt-4">Discussion Points</h3>
             <p className="mt-2">
@@ -69,6 +70,7 @@ const LandingPage = () => {
               width={80}
               height={80}
               alt="Reactions"
+              className="mx-auto"
             />
             <h3 className="text-xl font-semibold mt-4">Reactions & Feedback</h3>
             <p className="mt-2">
@@ -81,6 +83,7 @@ const LandingPage = () => {
               width={80}
               height={80}
               alt="Video Recording"
+              className="mx-auto"
             />
             <h3 className="text-xl font-semibold mt-4">Record Meetings</h3>
             <p className="mt-2">Record your meetings for future reference.</p>
@@ -91,6 +94,7 @@ const LandingPage = () => {
               width={80}
               height={80}
               alt="Screen Sharing"
+              className="mx-auto"
             />
             <h3 className="text-xl font-semibold mt-4">Screen Sharing</h3>
             <p className="mt-2">Share your screen with participants easily.</p>
@@ -101,6 +105,7 @@ const LandingPage = () => {
               width={80}
               height={80}
               alt="Chat Integration"
+              className="mx-auto"
             />
             <h3 className="text-xl font-semibold mt-4">Integrated Chat</h3>
             <p className="mt-2">
@@ -120,6 +125,7 @@ const LandingPage = () => {
               width={500}
               height={300}
               alt="How It Works"
+              className="w-full h-auto"
             />
           </div>
           <div className="md:w-1/2">
