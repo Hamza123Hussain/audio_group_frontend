@@ -1,11 +1,12 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import { useAuth0 } from '@auth0/auth0-react'
+
 import UserProfile from './UserPage'
+import { useUser } from '@clerk/nextjs'
+import Link from 'next/link'
 const Navbar = () => {
-  const { isAuthenticated } = useAuth0()
-  const { loginWithRedirect } = useAuth0()
+  const { user } = useUser()
   return (
     <header className="flex justify-between items-center px-2  bg-teal-700 flex-col">
       <div className="flex items-center gap-3">
@@ -22,15 +23,15 @@ const Navbar = () => {
         <a href="#contact" className="hover:text-blue-400">
           Contact
         </a>
-        {isAuthenticated ? (
+        {user ? (
           <UserProfile />
         ) : (
-          <button
+          <Link
+            href="/sign-up"
             className=" bg-green-600 rounded-lg px-2 text-sm text-white border-white hover:shadow-sm hover:shadow-green-500"
-            onClick={() => loginWithRedirect()}
           >
-            Log In
-          </button>
+            Login
+          </Link>
         )}
       </nav>
     </header>
