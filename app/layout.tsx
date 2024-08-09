@@ -20,15 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
-          <div className=" flex flex-col">
-            {/* navbar will come here */}
-            <Navbar />
-            <div className=" flex-grow">{children}</div>
-            {/* footer will come here */}
-            <Footer />
-          </div>
-        </AuthProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   )
