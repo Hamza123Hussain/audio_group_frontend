@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react'
 import LandingPage from './LandingPage'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import SideNav from './SideNav'
 
 export default function AuthProvider({
   children,
@@ -17,7 +16,7 @@ export default function AuthProvider({
   const { isAuthenticated } = useAuth0()
   useEffect(() => {
     // Set redirect URI to the user component
-    setRedirectUri(`${window.location.origin}`)
+    setRedirectUri(`${window.location.origin}/`)
   }, [])
 
   if (!redirectUri) {
@@ -35,10 +34,10 @@ export default function AuthProvider({
       {' '}
       <div className=" flex flex-col">
         {/* navbar will come here */}
-        <Navbar />
-        <div>{!isAuthenticated ? <SideNav /> : children} </div>{' '}
+        {/* <Navbar /> */}
+        <div>{!isAuthenticated ? <LandingPage /> : children} </div>{' '}
         {/* footer will come here */}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Auth0Provider>
   )
