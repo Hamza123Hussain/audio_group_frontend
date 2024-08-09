@@ -4,14 +4,15 @@ import SideNav from '@/components/SideNav'
 import Home from '@/components/SideComponents/Home'
 import Previous from '@/components/SideComponents/Previous'
 import Upcoming from '@/components/SideComponents/Upcoming'
-import { Recording } from '@/components/SideComponents/Recording'
+import Recording from '@/components/SideComponents/Recording'
 import Personal from '@/components/SideComponents/Personal'
+import { useIndex } from '@/utils/context'
 
 const LoginButton = () => {
-  const [index, setindex] = useState(0)
+  const { index, setIndex } = useIndex()
   return (
     <div className=" flex">
-      <SideNav index={index} setindex={setindex} />
+      <SideNav />
       <div className=" bg-slate-900 flex-1 text-white ">
         {index == 0 ? (
           <Home />
