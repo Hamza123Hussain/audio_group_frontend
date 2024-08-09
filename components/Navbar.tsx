@@ -8,24 +8,33 @@ const Navbar = () => {
   const { isAuthenticated } = useAuth0()
   const { loginWithRedirect } = useAuth0()
   return (
-    <div className=" py-1 px-2 flex justify-between bg-slate-200 text-black hover:shadow-lg hover:shadow-slate-400 ">
-      <div className=" flex items-center ">
-        <Image src={Logo} width={30} height={30} alt="" />
-        <h1 className=" text-slate-900 font-semibold hover:font-extrabold text-base">
-          TalkHub
-        </h1>
+    <header className="flex justify-between items-center px-2  bg-teal-700">
+      <div className="flex items-center gap-3">
+        <Image src={'/Logo.png'} width={50} height={50} alt="TalkHub Logo" />
+        <h1 className="text-2xl font-bold">TalkHub</h1>
       </div>
-      {isAuthenticated ? (
-        <UserProfile />
-      ) : (
-        <button
-          className=" bg-green-400 rounded-lg px-2 text-sm text-white border-white hover:shadow-sm hover:shadow-green-500"
-          onClick={() => loginWithRedirect()}
-        >
-          Log In
-        </button>
-      )}
-    </div>
+      <nav className="flex gap-6">
+        <a href="#features" className="hover:text-blue-400">
+          Features
+        </a>
+        <a href="#how-it-works" className="hover:text-blue-400">
+          How It Works
+        </a>
+        <a href="#contact" className="hover:text-blue-400">
+          Contact
+        </a>
+        {isAuthenticated ? (
+          <UserProfile />
+        ) : (
+          <button
+            className=" bg-green-600 rounded-lg px-2 text-sm text-white border-white hover:shadow-sm hover:shadow-green-500"
+            onClick={() => loginWithRedirect()}
+          >
+            Log In
+          </button>
+        )}
+      </nav>
+    </header>
   )
 }
 
