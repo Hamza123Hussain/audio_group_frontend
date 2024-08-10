@@ -6,16 +6,14 @@ import { FaCalendarAlt } from 'react-icons/fa'
 const Home = () => {
   return (
     <div className=" p-4 flex-col flex ">
-      <div className=" p-4 bg-slate-950 rounded-lg text-white flex flex-col justify-between gap-10 items-start ">
-        <div>
-          {' '}
-          <h1 className=" bg-slate-500 rounded-lg text-black p-2">
-            Upcoming Meeting : 12:30 PM
-          </h1>
-        </div>
+      <div className=" p-2 bg-slate-950 rounded-lg text-white flex flex-col items-start  lg:items-start">
+        <h1 className=" sm:px-2 px-4 rounded-lg text-white text-xs sm:text-base  text-center md:text-left">
+          Upcoming Meeting: 12:30 PM
+        </h1>
 
         <CurrentDateTime />
       </div>
+
       <div className=" grid grid-cols-2 sm:grid-cols-2 justify-center md:grid-cols-4 mt-5 md:px-4   gap-10 items-center md:justify-between">
         <TheMeetingsCards />
       </div>
