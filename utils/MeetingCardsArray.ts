@@ -13,7 +13,7 @@ const meetingCards = [
   {
     icon: FaVideo, // Start Meeting Icon
     heading: 'Start Meeting',
-    bgColor: 'bg-blue-800', // Navy Blue
+    bgColor: 'bg-blue-600', // Navy Blue
     Input: CreateMeeting,
   },
   {
