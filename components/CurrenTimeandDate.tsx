@@ -19,7 +19,10 @@ const CurrentDateTime = () => {
 
   return (
     <div className="flex flex-col ">
-      <h1 className="  text-white text-6xl p-2"> {time}</h1>
+      <h1 className="  text-white text-xl sm:text-6xl sm:px-2 px-4 py-2 ">
+        {' '}
+        {time}
+      </h1>
       <h1 className=" text-white px-4"> {date}</h1>
     </div>
   )
